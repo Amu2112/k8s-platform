@@ -1,0 +1,12 @@
+namespace: prod
+
+resources:
+  - ../../base
+
+patches:
+  - path: replicas.yaml
+
+configMapGenerator:
+  - name: myapp-config
+    literals:
+      - APP_ENV=production

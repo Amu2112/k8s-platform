@@ -1,0 +1,12 @@
+namespace: dev
+
+resources:
+  - ../../base
+
+patches:
+  - path: replicas.yaml  
+
+configMapGenerator:
+  - name: myapp-config
+    literals:
+      - APP_ENV=dev
