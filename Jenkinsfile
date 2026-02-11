@@ -32,7 +32,7 @@ pipeline {
                 withCredentials([file(credentialsId: 'kubeconfig-prod', variable: 'KUBECONFIG')]) {
                     sh '''
                     kubectl get nodes
-                    kubectl apply -f overlays/prod/
+                    kubectl apply -k overlays/prod/
                     '''
                 }
             }
