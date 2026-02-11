@@ -1,19 +1,19 @@
 pipeline {
     agent any
 
-    stages {
-        stage('Clean Workspace') {
-            steps {
-                cleanWs()
-            }
-        }
-
     environment {
         DOCKER_IMAGE = "amu2112/k8s-platform"
         DOCKER_TAG = "${BUILD_NUMBER}"
     }
 
     stages {
+
+        stage('Clean Workspace') {
+            steps {
+                cleanWs()
+            }
+        }
+
         stage('Checkout') {
             steps {
                 git branch: 'main',
