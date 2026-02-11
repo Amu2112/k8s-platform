@@ -23,7 +23,7 @@ pipeline {
 
         stage('Build') {
             steps {
-                sh 'docker build -t $DOCKER_IMAGE:$DOCKER_TAG -f k8s-platform/Dockerfile .'
+                sh 'docker build -t $DOCKER_IMAGE:$DOCKER_TAG .'
             }
         }
 
