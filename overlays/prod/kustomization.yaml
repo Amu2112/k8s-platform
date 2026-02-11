@@ -6,8 +6,11 @@ namespace: prod
 resources:
   - ../../base
 
-patches:
-  - path: replicas.yaml
+patchesStrategicMerge:
+  - replicas.yaml
+  
+#patches:
+ # - path: replicas.yaml
 
 configMapGenerator:
   - name: myapp-config
