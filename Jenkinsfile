@@ -37,5 +37,13 @@ pipeline {
                 }
             }
         }
+    } 
+   post {
+        success {
+            echo '✅ Deployment completed and verified successfully!'
+        }
+        failure {
+            echo '❌ Deployment verification failed!'
+        }
     }
 }
