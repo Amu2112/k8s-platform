@@ -27,6 +27,19 @@ pipeline {
             }
         }
 
+        stage('SAST - SonarQube') {
+    steps {
+        withSonarQubeEnv('sonarqube') {
+            sh '''
+            sonar-scanner \
+              -Dsonar.projectKey=k8s-platform \
+              -Dsonar.sources=. \
+              -Dsonar.login=$SONAR_AUTH_TOKEN
+            '''
+        }
+    }
+}
+
         stage('Deploy to Kubernetes') {
             steps {
                 withCredentials([file(credentialsId: 'kubeconfig-prod', variable: 'KUBECONFIG')]) {
