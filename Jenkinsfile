@@ -34,7 +34,7 @@ pipeline {
             sonar-scanner \
               -Dsonar.projectKey=k8s-platform \
               -Dsonar.sources=. \
-              -Dsonar.login=$SONAR_AUTH_TOKEN
+              //-Dsonar.login=$SONAR_AUTH_TOKEN
             '''
         }
     }
