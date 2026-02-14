@@ -33,7 +33,7 @@ pipeline {
             sh '''
             sonar-scanner \
               -Dsonar.projectKey=k8s-platform \
-              -Dsonar.sources=. \
+              -Dsonar.sources=.
                '''
         }
     }
