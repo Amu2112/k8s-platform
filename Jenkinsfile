@@ -33,7 +33,7 @@ pipeline {
             def scannerHome = tool 'SonarScanner'
         withSonarQubeEnv('sonarqube') {
             sh '''
-               sonar-scanner \
+               /usr/local/bin/sonar-scanner \
               -Dsonar.projectKey=k8s-platform \
               -Dsonar.sources=.
                '''
