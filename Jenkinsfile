@@ -30,7 +30,7 @@ pipeline {
         stage('SAST - SonarQube') {
     steps {
         script {
-            def scannerHome = tool 'sonar-scanner'
+            def scannerHome = tool 'SonarScanner'
         withSonarQubeEnv('sonarqube') {
             sh '''
                sonar-scanner \
