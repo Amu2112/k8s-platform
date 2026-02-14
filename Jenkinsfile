@@ -33,12 +33,9 @@ pipeline {
             def scannerHome = tool 'sonar-scanner'
         withSonarQubeEnv('sonarqube') {
             sh '''
-            docker run --rm \
-              -e SONAR_HOST_URL=$SONAR_HOST_URL \
-              -e SONAR_LOGIN=$SONAR_AUTH_TOKEN \
-              -v $(pwd):/usr/src \
-              sonarsource/sonar-scanner-cli \
+               sonar-scanner \
               -Dsonar.projectKey=k8s-platform \
+              -Dsonar.sources=.
                '''
         }
     }
