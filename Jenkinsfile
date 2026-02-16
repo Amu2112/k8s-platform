@@ -27,7 +27,7 @@ pipeline {
             }
         }
 
-        stage('SAST - SonarQube') {
+        stage('SAST - sonarsube') {
     steps {
         script {
             def scannerHome = tool 'SonarScanner'
