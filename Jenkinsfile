@@ -27,6 +27,12 @@ pipeline {
             }
         }
 
+        stage('Debug Sonar Config') {
+    steps {
+        echo "Check SonarQube name in Jenkins Global Configuration"
+    }
+}
+
         stage('SAST - sonarsube') {
     steps {
         script {
