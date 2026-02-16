@@ -63,7 +63,7 @@ pipeline {
                     sh '''
                     kubectl create namespace dev --dry-run=client -o yaml | kubectl apply -f -
                     kubectl apply -k overlays/dev/ -n dev
-                    kubectl rollout status deployment/k8s-platform -n dev --timeout=120s
+                    kubectl rollout status deployment/myapp -n dev --timeout=120s
                     '''
                 }
             }
