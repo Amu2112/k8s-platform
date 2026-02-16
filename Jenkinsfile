@@ -32,11 +32,11 @@ pipeline {
         script {
             def scannerHome = tool 'SonarScanner'
         withSonarQubeEnv('sonarqube') {
-            sh '''
-               sonar-scanner \
-                 -Dsonar.projectKey=k8s-platform \
-                 -Dsonar.sources=.
-               '''
+             sh  """
+               ${scannerHome}/bin/sonar-scanner \
+               -Dsonar.projectKey=k8s-platform \
+               -Dsonar.sources=.
+                """
         }
     }
 }    
